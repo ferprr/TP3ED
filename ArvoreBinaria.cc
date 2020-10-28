@@ -117,11 +117,10 @@ void ArvoreBinaria::inOrdem(TipoNo *p) {
         inOrdem(p->dir);
     }
 }
-void ArvoreBinaria::enumPreOrdem(TipoNo *p, int pos) {
+void ArvoreBinaria::enumPreOrdem(TipoNo *p, int &pos) {
         if (p!=nullptr) {
             p->pos = pos++;
             cout << "palavra: " << p->chave << " " << "posição: " << p->pos << endl;
-            pos++;
             enumPreOrdem(p->esq, pos);
             enumPreOrdem(p->dir, pos);
         }

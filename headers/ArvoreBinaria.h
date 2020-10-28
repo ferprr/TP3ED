@@ -23,7 +23,7 @@ class ArvoreBinaria {
         void apagaRecursivo(TipoNo* p);
         int pesquisaRecursivo(TipoNo* p, string item);
         string pesquisaPorPosicaoRecursivo(TipoNo* no, int k);
-        void enumPreOrdem(TipoNo *p, int pos);
+        void enumPreOrdem(TipoNo *p, int &pos);
         void removeRecursivo(TipoNo* &p, string item);
         void antecessor(TipoNo* q, TipoNo* &r);
         void preOrdem(TipoNo* p);
