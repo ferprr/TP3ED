@@ -17,6 +17,9 @@ class ArvoreBinaria {
         string pesquisaPorPosicao(int k);
         void remove(string item);
         //void limpa();
+        void imprimePreOrdem();
+        void encripta(int qnt);
+        void desencripta(int qnt);
 
     private:
         void insereRecursivo(TipoNo* &p, string item);
@@ -28,6 +31,8 @@ class ArvoreBinaria {
         void antecessor(TipoNo* q, TipoNo* &r);
         void preOrdem(TipoNo* p);
         void inOrdem(TipoNo* p);
+        void encriptaRecursivo(TipoNo* raiz, string mensagem);
+        void desencriptaRecursivo(TipoNo* raiz, int criptografia);
 
         TipoNo *raiz;
 };

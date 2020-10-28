@@ -25,64 +25,108 @@ int main () {
     char option;
     //cin >> option;
     option = cin.get();
+    string chave;
+    string substituir;
+    string nova;
 
     cout << option << endl;
 
     while(!cin.eof()) {
+        // switch (option) {
+        //     case 'i':
+        //         cin >> chave;
+        //         //cout << chave << " ";
+        //         arvore.insere(chave);
+        //         break;
+
+        //     case 's':
+        //         substituir = cin.get();
+        //         cin >> nova;
+        //         arvore.remove(substituir);
+        //         arvore.insere(nova);
+        //         break;
+
+        //     case 'e':
+        //         //arvore.imprimePreOrdem();
+        //         cin.get();
+        //         int x;
+        //         cin >> x;
+        //         for (int j=0; j<x; j++){
+        //             //cout << "passou for " << endl;
+        //             string mensagem;
+        //             cin >> mensagem;
+        //             //*mensagem = cin.get();
+        //             //cout << "mensagem : " << mensagem << endl;
+        //             int aux = arvore.pesquisa(mensagem);
+        //             cout << "pos: " << aux << endl;
+        //         }
+        //         break;
+
+        //     case 'd':
+        //         int i;
+        //         //i = cin.get();
+        //         cin >> i;
+        //         for (int j=0; j<i; j++){
+        //             cout << "j: " << j << endl;
+        //             //cin.get();
+        //             int k;
+        //             //k = cin.get();
+        //             cin >> k;
+        //             //cout << "k: " << k << endl;
+        //             string mensagem;
+        //             mensagem = arvore.pesquisaPorPosicao(k);
+        //             cout << mensagem << " ";
+        //         }
+        //         break;
+        //     default:
+        //         break;
+        // cin >> option;
         if (option == 'i') {
-            char chave[15];
+            string chave;
             cin >> chave;
             cout << chave << " ";
             arvore.insere(chave);
 
         } else if (option == 's') {
-            char substituir[15];
-            //cin >> substituir;
-            *substituir = cin.get();
-            char nova[15];
-            //cin >> nova;
-            *nova = cin.get();
+            string substituir;
+            cin >> substituir;
+            //*substituir = cin.get();
+            string nova;
+            cin >> nova;
+            //*nova = cin.get();
             //pos--;
             arvore.remove(substituir);
             //pos++;
             arvore.insere(nova);
 
         } else if (option == 'e') {
-            cin.get();
-            //cout << "option: "<< option << endl;
+            //arvore.imprimePreOrdem();
+            
             int x;
             cin >> x;
-            //x = cin.get();
-            //cout << "i: " << x << endl;
-
-            for (int j=0; j<x; j++){
-                //cout << "passou for " << endl;
-                char mensagem[15];
-                cin >> mensagem;
-                //*mensagem = cin.get();
-                //cout << "mensagem : " << mensagem << endl;
-                int aux = arvore.pesquisa(mensagem);
-                cout << "pos: " << aux << endl;
-            }
+            arvore.encripta(x);
             
         } else if (option = 'd') {
-            cin.get();
-            int i;
-            //i = cin.get();
-            cin >> i;
+            int x;
+            cin >> x;
+            arvore.desencripta(x);
+            // cin.get();
+            // int i;
+            // //i = cin.get();
+            // cin >> i;
 
-            cout << i << endl;
-            for (int j=0; j<i; j++){
-                cout << "j: " << j << endl;
-                cin.get();
-                int k;
-                //k = cin.get();
-                cin >> k;
-                cout << "k: " << k << endl;
-                string mensagem;
-                mensagem = arvore.pesquisaPorPosicao(k);
-                cout << mensagem << " ";
-            }
+            // cout << i << endl;
+            // for (int j=0; j<i; j++){
+            //     cout << "j: " << j << endl;
+            //     cin.get();
+            //     int k;
+            //     //k = cin.get();
+            //     cin >> k;
+            //     cout << "k: " << k << endl;
+            //     string mensagem;
+            //     mensagem = arvore.pesquisaPorPosicao(k);
+            //     cout << mensagem << " ";
+            // }
 
         } else {
             cout << "Opção inválida." << endl;
