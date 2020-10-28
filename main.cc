@@ -26,35 +26,22 @@ int main () {
         case 'i':
             cin >> chave;
             arvore.insere(chave);
-
-            //arvore.imprimePreOrdem();
-            //cout << endl;
             break;
         
         case 's':
-
-            //arvore.imprimePreOrdem();
-            //cout << "substituição" << endl;
             cin >>  substituir;
             cin >> nova;
-            
             arvore.remove(substituir);
             arvore.insere(nova);
-            
             break;
 
         case 'e':
             int k;
             cin >> k;
             arvore.encripta(k);
-
-            //arvore.imprimePreOrdem();
-            //cout << endl;
             break;
 
         case 'd':
-            //arvore.imprimePreOrdem();
-            //cout << endl;
             int x;
             cin >> x;
             arvore.desencripta(x);

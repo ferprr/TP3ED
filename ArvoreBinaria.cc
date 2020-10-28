@@ -48,7 +48,7 @@ void ArvoreBinaria::removeRecursivo(TipoNo* &no, string item) {
     } else {
         if (no->dir == nullptr) {
             aux = no;
-            no = no->dir;
+            no = no->esq;
             free(aux);
             enumPreOrdem(raiz, pos);
         } else if (no->esq == nullptr){
