@@ -103,19 +103,19 @@ void ArvoreBinaria::antecessor(TipoNo *q, TipoNo* &r) {
 }
 void ArvoreBinaria::preOrdem(TipoNo *p) {
     if (p!=nullptr) {
-        cout << "chave: " << p->chave << " " << endl;
-        cout << "posição: " << p->pos << " " << endl;
+        //cout << "chave: " << p->chave << " " << endl;
+        //cout << "posição: " << p->pos << " " << endl;
         preOrdem(p->esq);
         preOrdem(p->dir);
     }
 }
-void ArvoreBinaria::inOrdem(TipoNo *p) {
-    if (p!=nullptr) {
-        inOrdem(p->esq);
-        cout << p->chave << " ";
-        inOrdem(p->dir);
-    }
-}
+// void ArvoreBinaria::inOrdem(TipoNo *p) {
+//     if (p!=nullptr) {
+//         inOrdem(p->esq);
+//         cout << p->chave << " ";
+//         inOrdem(p->dir);
+//     }
+// }
 void ArvoreBinaria::enumPreOrdem(TipoNo *p, int &pos) {
         if (p!=nullptr) {
             p->pos = pos++;
@@ -130,22 +130,28 @@ void ArvoreBinaria::encripta(int qnt){
     string mensagem;
     while (i<qnt)
     {
+        //cout << i << endl;
+        int pos = 1;
         cin >> mensagem;
-        encriptaRecursivo(raiz, mensagem);
+        //cout << mensagem << " " << endl;
+        encriptaRecursivo(raiz, mensagem, pos);
         i++;
     }
     
-    
+    cout << endl;
 }
-void ArvoreBinaria::encriptaRecursivo(TipoNo* p, string mensagem){
+void ArvoreBinaria::encriptaRecursivo(TipoNo* p, string mensagem, int &pos){
 
     if (p!=nullptr) {
+        //p->pos = pos++;
+        //cout << p->chave << " " << p->pos << " " << endl;
+        //cout << mensagem << endl;
         if(p->chave == mensagem){
             //cout << "posição: " << p->pos << endl;
             cout << p->pos << " ";
         }
-        encriptaRecursivo(p->esq, mensagem);
-        encriptaRecursivo(p->dir, mensagem);
+        encriptaRecursivo(p->esq, mensagem, pos);
+        encriptaRecursivo(p->dir, mensagem, pos);
     }
 }
 void ArvoreBinaria::desencripta(int qnt){
@@ -159,10 +165,12 @@ void ArvoreBinaria::desencripta(int qnt){
         desencriptaRecursivo(raiz, criptografia);
         i++;
     }
+
+    cout << endl;
 }
 void ArvoreBinaria::desencriptaRecursivo(TipoNo* p, int criptografia){
+
     if (p!=nullptr) {
-        
         //cout << p->pos << endl;
         if(p->pos == criptografia) {
             //cout << "mensagem: " << p->chave << endl;

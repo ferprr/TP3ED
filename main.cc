@@ -25,39 +25,86 @@ int main () {
     //cout << option << endl;
 
     while(!cin.eof()) {
-        if (option == 'i') {
-            string chave;
+        switch (option)
+        {
+        case 'i':
+            //cout << option << endl;
             cin >> chave;
             //cout << chave << " ";
             arvore.insere(chave);
 
-        } else if (option == 's') {
-            string substituir;
-            cin >> substituir;
-            string nova;
+            //arvore.imprimePreOrdem();
+            break;
+
+        
+        case 's':
+            //cout << option << endl;
+            cin >>  substituir;
+            //cout << "substituir: " << substituir << " ";
             cin >> nova;
+            //cout << "nova: " << nova << endl;
             arvore.remove(substituir);
             arvore.insere(nova);
 
-        } else if (option == 'e') {
             //arvore.imprimePreOrdem();
-            
-            int x;
-            cin >> x;
-            arvore.encripta(x);
+            break;
 
-            cout << endl;
-            
-        } else if (option = 'd') {
+        case 'e':
+            //cout << option << endl;
+            //arvore.imprimePreOrdem();
+            int k;
+            cin >> k;
+            arvore.encripta(k);
+
+            //arvore.imprimePreOrdem();
+            break;
+
+        case 'd':
+            //cout << option << endl;
+            //arvore.imprimePreOrdem();
             int x;
             cin >> x;
             arvore.desencripta(x);
 
-            cout << endl;
+            //arvore.imprimePreOrdem();
+            break;
 
-        } else {
-            cout << "Opção inválida." << endl;
+        default:
+            break;
         }
+        // if (option == 'i') {
+        //     string chave;
+        //     cin >> chave;
+        //     //cout << chave << " ";
+        //     arvore.insere(chave);
+
+        // } else if (option == 's') {
+        //     string substituir;
+        //     cin >> substituir;
+        //     string nova;
+        //     cin >> nova;
+        //     arvore.remove(substituir);
+        //     arvore.insere(nova);
+
+        // } else if (option == 'e') {
+        //     //arvore.imprimePreOrdem();
+            
+        //     int x;
+        //     cin >> x;
+        //     arvore.encripta(x);
+
+        //     cout << endl;
+            
+        // } else if (option = 'd') {
+        //     int x;
+        //     cin >> x;
+        //     arvore.desencripta(x);
+
+        //     cout << endl;
+
+        // } else {
+        //     cout << "Opção inválida." << endl;
+        // }
         cin >> option;
     }
 }

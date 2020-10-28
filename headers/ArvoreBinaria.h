@@ -23,15 +23,15 @@ class ArvoreBinaria {
 
     private:
         void insereRecursivo(TipoNo* &p, string item);
-        void apagaRecursivo(TipoNo* p);
+        //void apagaRecursivo(TipoNo* p);
         int pesquisaRecursivo(TipoNo* p, string item);
         string pesquisaPorPosicaoRecursivo(TipoNo* no, int k);
         void enumPreOrdem(TipoNo *p, int &pos);
         void removeRecursivo(TipoNo* &p, string item);
         void antecessor(TipoNo* q, TipoNo* &r);
         void preOrdem(TipoNo* p);
-        void inOrdem(TipoNo* p);
-        void encriptaRecursivo(TipoNo* raiz, string mensagem);
+        //void inOrdem(TipoNo* p);
+        void encriptaRecursivo(TipoNo* raiz, string mensagem, int &pos);
         void desencriptaRecursivo(TipoNo* raiz, int criptografia);
 
         TipoNo *raiz;
